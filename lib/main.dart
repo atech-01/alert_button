@@ -32,9 +32,19 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Alert Dialog Flutter")),
+      appBar: AppBar(
+        title: Text(
+          "Alert Dialog Flutter",
+          style: TextStyle(color: Colors.white, fontSize: 18),
+        ),
+        backgroundColor: Colors.blueAccent,
+      ),
       body: Center(
         child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.blue, // Change this to any color you want
+            foregroundColor: Colors.white, // Text color
+          ),
           onPressed: () {
             showDialog(
               context: context,
@@ -47,19 +57,20 @@ class _MyHomePageState extends State<MyHomePage> {
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      child: Text("cancel"),
+                      child: Text("Cancel"),
                     ),
                     TextButton(
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      child: Text("okay"),
+                      child: Text("Okay"),
                     ),
                   ],
                 );
               },
             );
           },
+
           child: Text("Click Me"),
         ),
       ),
